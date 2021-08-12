@@ -19,13 +19,21 @@ const Formulario = () => {
   const sendData = (event) => {
     event.preventDefault();
     const regexTel = /^\x2b569[0-9]{8}$/i;
-    const regexMail = /^([A-Za-z0-9_\-.+])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,})$/;
+    const regexMail =
+      /^([A-Za-z0-9_\-.+])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,})$/;
     const regexRut = /^\d{1,2}\.\d{3}\.\d{3}[-][0-9kK]{1}$/;
 
-    if(!data.nombre && !data.apellido && !data.telefono && !data.RUT && !data.mail) return;
-    else if(!regexTel.test(data.telefono)) alert("Su teléfono no es válido")
-    else if(!regexMail.test(data.mail)) alert("Su mail no es válido");
-    else if(!regexRut.test(data.RUT)) alert("Su Rut no es válido");
+    if (
+      !data.nombre &&
+      !data.apellido &&
+      !data.telefono &&
+      !data.RUT &&
+      !data.mail
+    )
+      return;
+    else if (!regexTel.test(data.telefono)) alert("Su teléfono no es válido");
+    else if (!regexMail.test(data.mail)) alert("Su mail no es válido");
+    else if (!regexRut.test(data.RUT)) alert("Su Rut no es válido");
     console.log("nombre: ", data.nombre);
     console.log("apellido: ", data.apellido);
     console.log("Teléfono: ", data.telefono);
